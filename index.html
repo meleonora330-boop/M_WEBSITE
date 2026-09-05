@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Финансовый анализ | От идеи до решения</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slate 950 */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Эффект матового стекла */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(8, 145, 178, 0.3);
+        }
+
+        /* Свечение для 3D объектов */
+        .glow-effect {
+            filter: drop-shadow(0 0 20px rgba(8, 145, 178, 0.5));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Duotone для фото */
+        .duotone-photo {
+            filter: grayscale(100%) contrast(1.2);
+            mix-blend-mode: luminosity;
+            transition: all 0.5s ease;
+        }
+        
+        .photo-container:hover .duotone-photo {
+            filter: grayscale(0%) contrast(1);
+            mix-blend-mode: normal;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Экран 1: От идеи до принятия решения -->
+    <section class="relative flex min-h-screen flex-col items-center justify-center px-6 py-20">
+        <!-- Фоновое свечение -->
+        <div class="absolute inset-0 -z-10 flex items-center justify-center">
+            <div class="h-[500px] w-[500px] rounded-full bg-cyan-900/20 blur-[120px]"></div>
+        </div>
+
+        <div class="mx-auto max-w-6xl text-center">
+            <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl mb-16">
+                От идеи до принятия решения
+            </h1>
+        </div>
+
+        <!-- 4 Карточки с объектами -->
+        <div class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 relative">
+            <!-- Линия коннектор (HUD) -->
+            <div class="hidden lg:block absolute top-1/2 left-10 right-10 h-[1px] bg-cyan-900/50 -z-5"></div>
+
+            <div class="flex flex-col items-center glass-panel rounded-2xl p-6 transition hover:border-cyan-500">
+                <div class="relative aspect-square w-full overflow-hidden rounded-xl bg-gradient-to-br from-cyan-950/20 to-transparent flex items-center justify-center">
+                    <img src="https://i.yapx.ru/eKQ6T.png" alt="Бизнес Идея" class="h-4/5 w-4/5 object-contain glow-effect">
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]"></div>
+                    <span class="text-sm font-medium tracking-wide text-cyan-50">Бизнес Идея</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center glass-panel rounded-2xl p-6 transition hover:border-cyan-500" style="animation-delay: 0.2s;">
+                <div class="relative aspect-square w-full overflow-hidden rounded-xl bg-gradient-to-br from-cyan-950/20 to-transparent flex items-center justify-center">
+                    <img src="https://i.yapx.ru/eKQ70.png" alt="Анализ" class="h-4/5 w-4/5 object-contain glow-effect">
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]"></div>
+                    <span class="text-sm font-medium tracking-wide text-cyan-50">Анализ</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center glass-panel rounded-2xl p-6 transition hover:border-cyan-500" style="animation-delay: 0.4s;">
+                <div class="relative aspect-square w-full overflow-hidden rounded-xl bg-gradient-to-br from-cyan-950/20 to-transparent flex items-center justify-center">
+                    <img src="https://i.yapx.ru/eKQ8H.png" alt="Обсуждение" class="h-4/5 w-4/5 object-contain glow-effect">
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]"></div>
+                    <span class="text-sm font-medium tracking-wide text-cyan-50">Обсуждение</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center glass-panel rounded-2xl p-6 transition hover:border-cyan-500" style="animation-delay: 0.6s;">
+                <div class="relative aspect-square w-full overflow-hidden rounded-xl bg-gradient-to-br from-cyan-950/20 to-transparent flex items-center justify-center">
+                    <img src="https://i.yapx.ru/eKQ8T.png" alt="Осознанное решение" class="h-4/5 w-4/5 object-contain glow-effect">
+                </div>
+                <div class="mt-6 flex items-center gap-3">
+                    <div class="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_10px_#06b6d4]"></div>
+                    <span class="text-sm font-medium tracking-wide text-cyan-50">Осознанное решение</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 2: Что, Как и Зачем (Сетка + Кнопка) -->
+    <section class="relative flex min-h-screen flex-col items-center justify-center px-6 py-20 bg-slate-950">
+        <div class="mx-auto w-full max-w-6xl">
+            <!-- 3 Карточки в ряд -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Карточка 1 -->
+                <div class="glass-panel aspect-square p-8 rounded-xl flex flex-col justify-center transition-transform hover:-translate-y-2 group">
+                    <div class="text-cyan-600 font-mono text-xs mb-4">01</div>
+                    <h3 class="text-xl font-semibold mb-4 group-hover:text-cyan-400 transition-colors">Объект – Что</h3>
+                    <div class="h-[1px] w-12 bg-slate-700 mb-6 group-hover:bg-cyan-500 transition-colors"></div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        У вас возникла идея нового бизнеса. Вы хотите купить готовый бизнес. Вы хотите проверить существующий бизнес на предмет доходности.
+                    </p>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="glass-panel aspect-square p-8 rounded-xl flex flex-col justify-center transition-transform hover:-translate-y-2 group">
+                    <div class="text-cyan-600 font-mono text-xs mb-4">02</div>
+                    <h3 class="text-xl font-semibold mb-4 group-hover:text-cyan-400 transition-colors">Действия – Как</h3>
+                    <div class="h-[1px] w-12 bg-slate-700 mb-6 group-hover:bg-cyan-500 transition-colors"></div>
+                    <p class="text-slate-400 text-xs sm:text-sm xl:text-base leading-relaxed">
+                        Проведите финансовый анализ. Привлечение сторонних специалистов даст независимый свежий взгляд. Финансовая модель позволит посмотреть на бизнес языком денег. Обсуждение позволит рассмотреть идею на согласование с вашими целями.
+                    </p>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="glass-panel aspect-square p-8 rounded-xl flex flex-col justify-center transition-transform hover:-translate-y-2 group">
+                    <div class="text-cyan-600 font-mono text-xs mb-4">03</div>
+                    <h3 class="text-xl font-semibold mb-4 group-hover:text-cyan-400 transition-colors">Зачем – Результат</h3>
+                    <div class="h-[1px] w-12 bg-slate-700 mb-6 group-hover:bg-cyan-500 transition-colors"></div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        В итоге вы готовы принять решение. В случае реализации идеи вы имеете готовую финансовую модель. В случае отказа вы имеете осознанное решение на основе серьезного анализа.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Интерактивная кнопка для запуска Терминала -->
+            <div class="mt-16 flex justify-center">
+                <button onclick="openTerminal()" class="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-cyan-500/50 bg-cyan-950/30 px-8 py-4 transition-all hover:bg-cyan-900/50 hover:shadow-[0_0_30px_rgba(8,145,178,0.4)] hover:border-cyan-400">
+                    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                    <span class="relative flex h-3 w-3">
+                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"></span>
+                      <span class="relative inline-flex h-3 w-3 rounded-full bg-cyan-500"></span>
+                    </span>
+                    <span class="font-mono text-sm tracking-widest text-cyan-50 uppercase">Пройти диагностику</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Экран 3: Контакты -->
+    <section class="relative flex min-h-screen items-center justify-center px-6 py-20">
+        <div class="mx-auto grid w-full max-w-6xl grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Левая часть (Информация и форма) -->
+            <div class="flex flex-col space-y-10 z-10">
+                <div>
+                    <h2 class="text-3xl font-light mb-6">Связаться со специалистом</h2>
+                    <div class="space-y-2 text-slate-400 font-mono text-sm">
+                        <p><span class="text-cyan-600 mr-2">EXE:</span> Элеонора</p>
+                        <p><span class="text-cyan-600 mr-2">TEL:</span> +7 (XXX) XXX-XX-XX</p>
+                        <p><span class="text-cyan-600 mr-2">LOC:</span> Город</p>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-xl w-full max-w-md">
+                    <form class="flex flex-col space-y-6">
+                        <div class="relative">
+                            <input type="text" placeholder="Ваше Имя" class="w-full bg-transparent border-b border-slate-700 py-2 text-white outline-none focus:border-cyan-500 transition-colors placeholder-slate-600">
+                        </div>
+                        <div class="relative">
+                            <input type="tel" placeholder="Телефон" class="w-full bg-transparent border-b border-slate-700 py-2 text-white outline-none focus:border-cyan-500 transition-colors placeholder-slate-600">
+                        </div>
+                        <button type="submit" class="mt-4 border border-cyan-700 text-cyan-400 py-3 rounded hover:bg-cyan-900/30 hover:border-cyan-400 transition-all font-mono text-sm tracking-widest uppercase">
+                            Оставить заявку
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Правая часть (Фотография Yapx) -->
+            <div class="relative flex justify-center md:justify-end photo-container">
+                <div class="relative w-full max-w-sm aspect-[3/4] overflow-hidden rounded-lg bg-cyan-950/20 border border-slate-800">
+                    <!-- Заглушка/Фон на случай долгой загрузки -->
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDEwaDQwdjFIMHptMCAyMGg0MHYxSDB6IiBmaWxsPSJyZ2JhKDE1LCAyMywgNDIsIDAuMikiLz48L3N2Zz4=')] opacity-50"></div>
+                    
+                    <!-- Ваше Фото -->
+                    <img src="https://i.yapx.ru/eKQGi.jpg" alt="Элеонора - Финансовый аналитик" class="relative z-10 w-full h-full object-cover duotone-photo">
+                    
+                    <!-- Декоративные рамки HUD -->
+                    <div class="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-cyan-500 z-20"></div>
+                    <div class="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-cyan-500 z-20"></div>
+                    <div class="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-cyan-500 z-20"></div>
+                    <div class="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-cyan-500 z-20"></div>
+                    
+                    <!-- Линия сканера -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-cyan-400/50 shadow-[0_0_15px_#06b6d4] z-30 transform -translate-y-full group-hover:animate-[scan_3s_ease-in-out_infinite]"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ИНТЕРАКТИВНЫЙ ТЕРМИНАЛ (Скрыт по умолчанию) -->
+    <div id="finance-terminal" class="fixed inset-0 z-50 hidden flex-col items-center justify-center bg-black/90 px-4 backdrop-blur-md transition-opacity">
+        <div class="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-cyan-900 bg-slate-950/80 p-8 text-white shadow-[0_0_50px_rgba(8,145,178,0.2)]">
+            
+            <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-cyan-500 to-transparent opacity-50"></div>
+            <div class="absolute right-4 top-4 text-xs font-mono text-cyan-700 tracking-widest">SYS_DIAGNOSTICS_V1.0</div>
+            
+            <!-- Шаг 1 -->
+            <div id="step-1" class="flex flex-col space-y-6 text-center">
+                <h2 class="text-3xl font-light tracking-wide">Выберите объект анализа</h2>
+                <div class="flex flex-col gap-4 sm:flex-row mt-4">
+                    <button onclick="startScenario('idea')" class="group relative flex-1 rounded-lg border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-cyan-500 hover:bg-cyan-950/30">
+                        <span class="block text-xl font-medium text-white group-hover:text-cyan-400">Бизнес Идея</span>
+                        <span class="mt-2 block text-sm text-slate-500">Проект с нуля</span>
+                    </button>
+                    <button onclick="startScenario('business')" class="group relative flex-1 rounded-lg border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-emerald-500 hover:bg-emerald-950/30">
+                        <span class="block text-xl font-medium text-white group-hover:text-emerald-400">Готовый бизнес</span>
+                        <span class="mt-2 block text-sm text-slate-500">Действующий актив</span>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Шаг 2: Идея -->
+            <div id="step-2-idea" class="hidden flex-col space-y-6">
+                <h2 class="text-2xl font-light">Ввод параметров проекта</h2>
+                <div class="space-y-2">
+                    <label class="text-sm text-cyan-400">Инвестиции: <span id="val-invest" class="font-mono text-white">5 000 000</span> ₽</label>
+                    <input type="range" id="slider-invest" min="500000" max="50000000" step="500000" value="5000000" class="w-full accent-cyan-500" oninput="updateVal('val-invest', this.value)">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm text-cyan-400">Ожидаемая выручка: <span id="val-rev-idea" class="font-mono text-white">12 000 000</span> ₽</label>
+                    <input type="range" id="slider-rev-idea" min="1000000" max="100000000" step="1000000" value="12000000" class="w-full accent-cyan-500" oninput="updateVal('val-rev-idea', this.value)">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm text-cyan-400">Ожидаемая прибыль: <span id="val-prof-idea" class="font-mono text-white">3 000 000</span> ₽</label>
+                    <input type="range" id="slider-prof-idea" min="100000" max="50000000" step="100000" value="3000000" class="w-full accent-cyan-500" oninput="updateVal('val-prof-idea', this.value)">
+                </div>
+                <button onclick="runAnalysis('idea')" class="mt-4 w-full rounded bg-cyan-600 py-3 font-medium text-white transition hover:bg-cyan-500">Провести анализ</button>
+            </div>
+    
+            <!-- Шаг 2: Бизнес -->
+            <div id="step-2-business" class="hidden flex-col space-y-6">
+                <h2 class="text-2xl font-light">Параметры текущего бизнеса</h2>
+                <div class="space-y-2">
+                    <label class="text-sm text-emerald-400">Годовая выручка: <span id="val-rev-biz" class="font-mono text-white">30 000 000</span> ₽</label>
+                    <input type="range" id="slider-rev-biz" min="1000000" max="500000000" step="1000000" value="30000000" class="w-full accent-emerald-500" oninput="updateVal('val-rev-biz', this.value)">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm text-emerald-400">Годовая прибыль: <span id="val-prof-biz" class="font-mono text-white">6 000 000</span> ₽</label>
+                    <input type="range" id="slider-prof-biz" min="0" max="100000000" step="500000" value="6000000" class="w-full accent-emerald-500" oninput="updateVal('val-prof-biz', this.value)">
+                </div>
+                <div class="space-y-2 pt-2">
+                    <label class="text-sm text-slate-400 block mb-2">Главная задача:</label>
+                    <div class="flex gap-2">
+                        <button id="btn-task-check" onclick="setTask('check')" class="flex-1 rounded border border-emerald-500 bg-emerald-900/30 py-2 text-sm text-emerald-400 transition">Проверить доходность</button>
+                        <button id="btn-task-scale" onclick="setTask('scale')" class="flex-1 rounded border border-slate-700 bg-slate-900 py-2 text-sm text-slate-400 transition hover:border-emerald-500">Масштабироваться</button>
+                    </div>
+                </div>
+                <button onclick="runAnalysis('business')" class="mt-4 w-full rounded bg-emerald-600 py-3 font-medium text-white transition hover:bg-emerald-500">Запустить диагностику</button>
+            </div>
+    
+            <!-- Шаг 3: Загрузка -->
+            <div id="step-3-loading" class="hidden flex-col items-center justify-center space-y-4 py-12">
+                <div class="h-16 w-16 animate-spin rounded-full border-4 border-slate-800 border-t-cyan-500"></div>
+                <p id="loading-text" class="font-mono text-cyan-400 text-sm tracking-widest">Анализ рентабельности...</p>
+            </div>
+    
+            <!-- Шаг 4: Результат -->
+            <div id="step-4-result" class="hidden flex-col space-y-6">
+                <h2 class="text-2xl font-light">Результат диагностики</h2>
+                <div id="result-content" class="rounded border border-cyan-900 bg-cyan-950/20 p-4 text-sm text-slate-300 leading-relaxed"></div>
+                <div class="space-y-3 pt-4 border-t border-slate-800">
+                    <p class="text-sm text-white">Оставьте контакт для получения детального расчета:</p>
+                    <input type="text" placeholder="+7 (___) ___-__-__" class="w-full border-b border-cyan-700 bg-transparent py-2 text-white outline-none focus:border-cyan-400">
+                    <button onclick="closeTerminal()" class="w-full rounded bg-cyan-600 py-3 font-medium text-white transition hover:bg-cyan-500">Запросить разбор</button>
+                </div>
+            </div>
+            
+            <button onclick="closeTerminal()" class="absolute right-4 top-4 text-slate-500 hover:text-white text-xl">&times;</button>
+        </div>
+    </div>
+
+    <!-- Скрипты для терминала -->
+    <script>
+        let activeTask = 'check';
+
+        function openTerminal() {
+            document.getElementById('finance-terminal').classList.remove('hidden');
+            document.getElementById('finance-terminal').classList.add('flex');
+            showStep('step-1');
+        }
+
+        function closeTerminal() {
+            document.getElementById('finance-terminal').classList.add('hidden');
+            document.getElementById('finance-terminal').classList.remove('flex');
+        }
+
+        function showStep(stepId) {
+            ['step-1', 'step-2-idea', 'step-2-business', 'step-3-loading', 'step-4-result'].forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+                document.getElementById(id).classList.remove('flex');
+            });
+            document.getElementById(stepId).classList.remove('hidden');
+            document.getElementById(stepId).classList.add('flex');
+        }
+
+        function startScenario(type) {
+            if (type === 'idea') showStep('step-2-idea');
+            if (type === 'business') showStep('step-2-business');
+        }
+
+        function updateVal(elementId, val) {
+            document.getElementById(elementId).innerText = parseInt(val).toLocaleString('ru-RU');
+        }
+
+        function setTask(task) {
+            activeTask = task;
+            document.getElementById('btn-task-check').className = task === 'check' 
+                ? 'flex-1 rounded border border-emerald-500 bg-emerald-900/30 py-2 text-sm text-emerald-400 transition' 
+                : 'flex-1 rounded border border-slate-700 bg-slate-900 py-2 text-sm text-slate-400 transition hover:border-emerald-500';
+            document.getElementById('btn-task-scale').className = task === 'scale' 
+                ? 'flex-1 rounded border border-emerald-500 bg-emerald-900/30 py-2 text-sm text-emerald-400 transition' 
+                : 'flex-1 rounded border border-slate-700 bg-slate-900 py-2 text-sm text-slate-400 transition hover:border-emerald-500';
+        }
+
+        function runAnalysis(type) {
+            showStep('step-3-loading');
+            const loadText = document.getElementById('loading-text');
+            setTimeout(() => loadText.innerText = "Расчет скрытых рисков...", 800);
+            setTimeout(() => loadText.innerText = "Формирование выводов...", 1600);
+            
+            setTimeout(() => {
+                let content = "";
+                if (type === 'idea') {
+                    const invest = parseInt(document.getElementById('slider-invest').value);
+                    const rev = parseInt(document.getElementById('slider-rev-idea').value);
+                    const prof = parseInt(document.getElementById('slider-prof-idea').value);
+                    const margin = Math.round((prof / rev) * 100) || 0;
+                    content = `<span class="text-cyan-400 block mb-2 font-mono">РЕЗУЛЬТАТ:</span> Ваша ожидаемая рентабельность: <b class="text-white">${margin}%</b>. По статистике, 80% новых проектов не достигают плановой маржинальности из-за неучтенных расходов на старте. <br><br>Чтобы инвестиции в размере <b>${(invest/1000000).toFixed(1)} млн ₽</b> принесли ожидаемый результат, а не кассовый разрыв, необходимо перевести идею в твердую финансовую модель.`;
+                } else {
+                    const rev = parseInt(document.getElementById('slider-rev-biz').value);
+                    const prof = parseInt(document.getElementById('slider-prof-biz').value);
+                    const margin = Math.round((prof / rev) * 100) || 0;
+                    const loss = (rev * 0.05).toLocaleString('ru-RU');
+                    if (activeTask === 'check') {
+                        content = `<span class="text-emerald-400 block mb-2 font-mono">ДИАГНОСТИКА:</span> Текущая рентабельность бизнеса: <b class="text-white">${margin}%</b>. Наш опыт аудита аналогичных компаний показывает, что от 5% до 15% выручки часто оседают в "слепых зонах". Для вашего объема это потенциально до <b class="text-white">${loss} ₽</b> упущенной прибыли в год. Мы знаем, как найти эти деньги.`;
+                    } else {
+                        content = `<span class="text-emerald-400 block mb-2 font-mono">МАСШТАБИРОВАНИЕ:</span> Ваша рентабельность <b class="text-white">${margin}%</b>. При кратном росте без жесткой оцифровки издержки растут быстрее доходов. Снижение рентабельности всего на 5% при росте "сожжет" <b class="text-white">${loss} ₽</b> прибыли. Модель позволит масштабироваться безопасно.`;
+                    }
+                }
+                document.getElementById('result-content').innerHTML = content;
+                showStep('step-4-result');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
